@@ -89,8 +89,8 @@
       :n"gL" #'evil-mc-make-and-goto-prev-match
 
       ;; Add below/above cursor
-      :n "s-j" #'evil-mc-make-cursor-move-next-line
-      :n "s-k" #'evil-mc-make-cursor-move-prev-line)
+      :n "M-j" #'evil-mc-make-cursor-move-next-line
+      :n "M-k" #'evil-mc-make-cursor-move-prev-line)
 ;; Clear cursors with escape
 (after! evil-mc
   (add-hook 'doom-escape-hook
@@ -105,6 +105,10 @@
   :init
   (map! :nv "C-j" #'drag-stuff-down
         :nv "C-k" #'drag-stuff-up))
+
+;; vterm
+(map! :leader "vf" #'vterm)
+(map! :leader "vp" #'projectile-run-vterm)
 
 ;; Automatically set web-mode for typescript files
 (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . web-mode))
